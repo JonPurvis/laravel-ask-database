@@ -48,7 +48,7 @@ class Oracle
 
     protected function queryOpenAi(string $prompt, string $stop, float $temperature = 0.0)
     {
-        $completions = $this->client->completions()->create([
+        $completions = $this->client->chat()->create([
             'model' => 'gpt-3.5-turbo',
             'prompt' => $prompt,
             'temperature' => $temperature,
