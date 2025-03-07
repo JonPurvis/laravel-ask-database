@@ -49,7 +49,7 @@ class Oracle
     protected function queryOpenAi(string $prompt, string $stop, float $temperature = 0.0)
     {
         $completions = $this->client->completions()->create([
-            'model' => 'gpt-3.5-turbo-instruct',
+            'model' => 'GPT-4o',
             'prompt' => $prompt,
             'temperature' => $temperature,
             'max_tokens' => 100,
