@@ -56,7 +56,8 @@ class Oracle
             'stop' => $stop,
         ]);
 
-        dd($completions->choices[0]);
+        print_r($completions->choices);
+        exit;
         return $completions->choices;
     }
 
