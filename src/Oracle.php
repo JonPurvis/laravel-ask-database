@@ -56,8 +56,7 @@ class Oracle
             'stop' => $stop,
         ]);
 
-        print_r($completions->choices[0]);
-        return $completions->choices;
+        return $completions->choices[0];
     }
 
     protected function buildPrompt(string $question, ?string $query = null, ?string $result = null): string
