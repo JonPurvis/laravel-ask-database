@@ -25,7 +25,7 @@ class Oracle
 
         $prompt = $this->buildPrompt($question, $query, $result);
 
-        $answer = $this->queryOpenAi($prompt, null, 0.7);
+        $answer = $this->queryOpenAi($prompt, "\n", 0.7);
 
         return Str::of($answer)
             ->trim()
@@ -52,8 +52,7 @@ class Oracle
             'model' => 'gpt-3.5-turbo-instruct',
             'prompt' => $prompt,
             'temperature' => $temperature,
-            'max_tokens' => 100,
-            'stop' => $stop,
+            'max_tokens' => 1000,
         ]);
 
         return $completions->choices[0]->text;
