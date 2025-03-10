@@ -25,7 +25,7 @@ class Oracle
 
         $prompt = $this->buildPrompt($question, $query, $result);
 
-        $answer = $this->queryOpenAi($prompt, "\n\n", 0.7);
+        $answer = $this->queryOpenAi($prompt, "\n", 0.7);
 
         return Str::of($answer)
             ->trim()
@@ -53,7 +53,7 @@ class Oracle
             'prompt' => $prompt,
             'temperature' => $temperature,
             'max_tokens' => 1000,
-            'stop' => '...',
+            'stop' => $stop,
         ]);
 
         return $completions->choices[0]->text;
