@@ -53,7 +53,7 @@ class Oracle
             'prompt' => $prompt,
             'temperature' => $temperature,
             'max_tokens' => 1000,
-            'stop' => $stop,
+            'stop' => null,
         ]);
 
         return $completions->choices[0]->text;
